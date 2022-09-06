@@ -22,7 +22,7 @@ async function loginFormHandler(event) {
     }
   }
   
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
 async function signupFormHandler(event) {
     event.preventDefault();
     const username = document.querySelector('#username-signup').value.trim();
@@ -41,11 +41,12 @@ async function signupFormHandler(event) {
       });
        // check the response status
     if (response.ok) {
-        console.log('success');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
     }
   }
   
+  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
